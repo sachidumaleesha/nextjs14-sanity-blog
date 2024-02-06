@@ -1,6 +1,7 @@
 import { fullBlog } from "@/lib/interface";
 import { client, urlFor } from "@/lib/sanity";
 import { PortableText } from "@portabletext/react";
+import { Metadata } from "next";
 import Image from "next/image";
 
 async function getData(slug: string) {
@@ -22,7 +23,6 @@ export default async function BlogArticle({
   params: { slug: string };
 }) {
   const data: fullBlog = await getData(params.slug);
-  console.log(data);
 
   return (
     <div className="my-8">
